@@ -15,7 +15,6 @@
         <dependency>
             <groupId>cn.fyypumpkin</groupId>
             <artifactId>config</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

@@ -11,5 +11,14 @@
 
     <artifactId>infrastructure</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.fyypumpkin</groupId>
+            <artifactId>config</artifactId>
+        </dependency>
+
+
+    </dependencies>
+
 
 </project>
