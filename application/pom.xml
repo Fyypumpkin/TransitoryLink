@@ -11,5 +11,11 @@
 
     <artifactId>application</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.fyypumpkin</groupId>
+            <artifactId>domain</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -16,8 +16,10 @@
             <groupId>cn.fyypumpkin</groupId>
             <artifactId>config</artifactId>
         </dependency>
-
-
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
     </dependencies>
 
 

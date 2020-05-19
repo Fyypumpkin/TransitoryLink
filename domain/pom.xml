@@ -11,5 +11,11 @@
 
     <artifactId>domain</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.fyypumpkin</groupId>
+            <artifactId>infrastructure</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
