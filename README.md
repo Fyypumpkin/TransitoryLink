@@ -5,6 +5,8 @@ web(DTO) -> service(DO) -> repository(Entity)
 
 [x] 注册
 
+[ ] log
+
 [ ] 跨域
 
 [ ] 接入登陆账号
