@@ -12,12 +12,12 @@ import org.springframework.stereotype.Service;
 public class RedisBloomFilterAdapterImpl implements BloomFilterAdapter {
 
     private static final int BIT_SIZE = 2 << 28;
-    // 8 个 hash 计算函数种子
-    private static final int[] seeds = new int[] {3, 5, 7, 11, 13, 31, 37, 61};
+    // 4 个 hash 计算函数种子
+    private static final int[] seeds = new int[] {3, 5, 7, 11};
 
     private static final String REDIS_CACHE_KEY = "transitory:cache:";
 
-    private static Hash[] hashFunc = new Hash[seeds.length];//用于存储8个随机哈希值对象
+    private static Hash[] hashFunc = new Hash[seeds.length];//用于存储4个随机哈希值对象
 
     static {
         for (int i = 0; i < seeds.length; i++) {

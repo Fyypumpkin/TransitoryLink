@@ -11,6 +11,10 @@ web(DTO) -> service(DO) -> repository(Entity)
 
 [ ] 短连接分级
 
+[ ] 管理后台
+
+[ ] 访问控制
+ 
 
 ```jshelllanguage
 curl -d '{"longUri":"http://www.baidu.com","redirectType":1, "transitoryType":1}' -H 'Content-Type:
