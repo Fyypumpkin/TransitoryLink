@@ -25,7 +25,7 @@ public class LocalCacheUtils {
         return null;
     }
 
-    public static <K, V> V getData(boolean enableCache, @NonNull K key, Function<K, V> cacheLoader,
+    public static <K, V> V getDataWithRedis(boolean enableCache, @NonNull K key, Function<K, V> cacheLoader,
         Function<K, V> valueLoader) {
         V res = null;
 

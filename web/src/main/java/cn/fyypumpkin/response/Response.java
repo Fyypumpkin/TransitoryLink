@@ -1,12 +1,14 @@
 package cn.fyypumpkin.response;
 
 import lombok.Builder;
+import lombok.Data;
 
 /**
  * @author juntuan
  * @date 2020-05-19
  */
 @Builder
+@Data
 public class Response {
     Status status;
     String msg;

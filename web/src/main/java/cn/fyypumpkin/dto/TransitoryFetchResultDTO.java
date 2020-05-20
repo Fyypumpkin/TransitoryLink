@@ -1,5 +1,6 @@
 package cn.fyypumpkin.dto;
 
+import cn.fyypumpkin.aop.RedirectUri;
 import lombok.Data;
 
 /**
@@ -11,5 +12,6 @@ public class TransitoryFetchResultDTO {
     /**
      * 原始链接
      */
+    @RedirectUri
     private String longUri;
 }

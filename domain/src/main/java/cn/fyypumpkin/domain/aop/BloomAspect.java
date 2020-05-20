@@ -1,5 +1,6 @@
 package cn.fyypumpkin.domain.aop;
 
+import cn.fyypumpkin.domain.exception.TransitoryErrorCode;
 import cn.fyypumpkin.domain.exception.TransitoryException;
 import cn.fyypumpkin.function.BloomFilter;
 import cn.fyypumpkin.function.BloomFilterAdapter;
@@ -46,6 +47,7 @@ public class BloomAspect {
 
         for (Field declaredField : declaredFields) {
             if (declaredField.isAnnotationPresent(BloomFilterHashValue.class)) {
+                declaredField.setAccessible(true);
                 objects.add(declaredField.get(request));
             }
         }
@@ -58,7 +60,7 @@ public class BloomAspect {
             return;
         }
 
-        throw new TransitoryException();
+        throw new TransitoryException(TransitoryErrorCode.INVALID_REQ);
     }
 
     private String genFilterValue(List<Object> objects) {
