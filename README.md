@@ -16,6 +16,14 @@ web(DTO) -> service(DO) -> repository(Entity)
 [ ] 管理后台
 
 [ ] 访问控制
+
+[ ] 设备跳转
+
+[ ] 地区跳转
+
+[ ] 时间段跳转
+
+[ ] 参数跳转
  
 
 ```jshelllanguage
