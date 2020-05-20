@@ -1,7 +1,9 @@
 package cn.fyypumpkin.service;
 
 import cn.fyypumpkin.domain.TransitoryFetchDO;
-import cn.fyypumpkin.domain.TransitoryFetchResultDO;
+import cn.fyypumpkin.domain.result.TransitoryFetchResult;
+import cn.fyypumpkin.domain.TransitoryRegisterDO;
+import cn.fyypumpkin.domain.result.TransitoryRegisterResult;
 
 /**
  * @author juntuan
@@ -11,5 +13,7 @@ public interface TransitoryService {
     /**
      * 获取对应的原始链接
      */
-    TransitoryFetchResultDO fetch(TransitoryFetchDO transitoryFetchDO);
+    TransitoryFetchResult fetch(TransitoryFetchDO transitoryFetchDO);
+
+    TransitoryRegisterResult register(TransitoryRegisterDO registerDO);
 }

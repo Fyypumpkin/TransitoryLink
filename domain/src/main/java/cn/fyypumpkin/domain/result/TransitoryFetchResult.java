@@ -1,4 +1,4 @@
-package cn.fyypumpkin.domain;
+package cn.fyypumpkin.domain.result;
 
 import lombok.Data;
 
@@ -7,6 +7,6 @@ import lombok.Data;
  * @date 2020-05-19
  */
 @Data
-public class TransitoryFetchResultDO {
+public class TransitoryFetchResult {
     private String longUri;
 }

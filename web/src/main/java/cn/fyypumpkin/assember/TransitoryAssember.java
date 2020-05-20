@@ -1,7 +1,7 @@
 package cn.fyypumpkin.assember;
 
 import cn.fyypumpkin.domain.TransitoryFetchDO;
-import cn.fyypumpkin.domain.TransitoryFetchResultDO;
+import cn.fyypumpkin.domain.result.TransitoryFetchResult;
 import cn.fyypumpkin.dto.TransitoryFetchDTO;
 import cn.fyypumpkin.dto.TransitoryFetchResultDTO;
 
@@ -16,7 +16,7 @@ public class TransitoryAssember {
         return transitoryFetchDO;
     }
 
-    public static TransitoryFetchResultDTO toDTO(TransitoryFetchResultDO fetchResultDO){
+    public static TransitoryFetchResultDTO toDTO(TransitoryFetchResult fetchResultDO){
         TransitoryFetchResultDTO transitoryFetchDTO = new TransitoryFetchResultDTO();
         transitoryFetchDTO.setLongUri(fetchResultDO.getLongUri());
         return transitoryFetchDTO;
