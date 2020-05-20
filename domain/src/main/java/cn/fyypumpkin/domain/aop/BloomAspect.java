@@ -2,6 +2,7 @@ package cn.fyypumpkin.domain.aop;
 
 import cn.fyypumpkin.domain.exception.TransitoryErrorCode;
 import cn.fyypumpkin.domain.exception.TransitoryException;
+import cn.fyypumpkin.function.BloomAdapterSelector;
 import cn.fyypumpkin.function.BloomFilter;
 import cn.fyypumpkin.function.BloomFilterAdapter;
 import java.lang.reflect.Field;
@@ -27,7 +28,7 @@ public class BloomAspect {
     @Resource
     private BloomFilter bloomFilter;
     @Resource
-    private BloomFilterAdapter filterAdapter;
+    private BloomAdapterSelector bloomAdapterSelector;
 
     @Before("@annotation(cn.fyypumpkin.domain.aop.EnableBloomFilter)")
     public void before(JoinPoint joinPoint) throws IllegalAccessException {
@@ -56,7 +57,9 @@ public class BloomAspect {
             return;
         }
 
-        if (bloomFilter.filter(filterAdapter, genFilterValue(objects))) {
+
+
+        if (bloomFilter.filter(bloomAdapterSelector.select("redis"), genFilterValue(objects))) {
             return;
         }
 

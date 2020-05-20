@@ -69,6 +69,11 @@ public class RedisBloomFilterAdapterImpl implements BloomFilterAdapter {
         }
     }
 
+    @Override
+    public String names() {
+        return "redis";
+    }
+
     private String generateKey(int hashValue) {
         return REDIS_CACHE_KEY + hashValue % 10;
     }

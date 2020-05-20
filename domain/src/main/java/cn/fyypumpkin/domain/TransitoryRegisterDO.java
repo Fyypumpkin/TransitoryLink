@@ -3,6 +3,7 @@ package cn.fyypumpkin.domain;
 import cn.fyypumpkin.cache.RedisUtils;
 import cn.fyypumpkin.common.ScaleUtils;
 import cn.fyypumpkin.domain.factory.TransitoryFactory;
+import cn.fyypumpkin.function.BloomAdapterSelector;
 import cn.fyypumpkin.function.BloomFilter;
 import cn.fyypumpkin.function.BloomFilterAdapter;
 import java.util.Date;
@@ -19,12 +20,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class TransitoryRegisterDO {
     private static BloomFilter bloomFilter;
-    private static BloomFilterAdapter bloomFilterAdapter;
+    private static BloomAdapterSelector bloomAdapterSelector;
 
     @Autowired
-    public TransitoryRegisterDO(BloomFilter bloomFilter, BloomFilterAdapter bloomFilterAdapter) {
+    public TransitoryRegisterDO(BloomFilter bloomFilter, BloomAdapterSelector bloomAdapterSelector) {
         TransitoryRegisterDO.bloomFilter = bloomFilter;
-        TransitoryRegisterDO.bloomFilterAdapter = bloomFilterAdapter;
+        TransitoryRegisterDO.bloomAdapterSelector = bloomAdapterSelector;
     }
 
     public TransitoryRegisterDO(){}
@@ -45,7 +46,7 @@ public class TransitoryRegisterDO {
         String shortUri = ScaleUtils.convert(longUri.hashCode(), 8);
         TransitoryDO transitoryDO = TransitoryFactory.createTransitoryDO(shortUri, longUri, redirectType, expireDate);
         RedisUtils.set(shortUri, transitoryDO, 24, TimeUnit.HOURS);
-        bloomFilter.addToFilter(bloomFilterAdapter, shortUri);
+        bloomFilter.addToFilter(bloomAdapterSelector.select("redis"), shortUri);
 
         // 数据库操作
         return transitoryDO;

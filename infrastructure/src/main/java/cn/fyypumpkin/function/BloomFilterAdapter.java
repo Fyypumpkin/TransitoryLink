@@ -8,4 +8,6 @@ public interface BloomFilterAdapter {
     boolean contains(String value);
 
     void addToFilter(String value);
+
+    String names();
 }
