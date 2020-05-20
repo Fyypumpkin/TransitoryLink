@@ -1,11 +1,15 @@
 package cn.fyypumpkin.controller;
 
+import cn.fyypumpkin.aop.ControllerErrorHandler;
 import cn.fyypumpkin.aop.Redirect;
 import cn.fyypumpkin.assember.TransitoryAssember;
 import cn.fyypumpkin.domain.result.TransitoryFetchResult;
+import cn.fyypumpkin.domain.result.TransitoryRegisterResult;
 import cn.fyypumpkin.dto.TransitoryFetchDTO;
+import cn.fyypumpkin.dto.TransitoryRegisterDTO;
 import cn.fyypumpkin.response.Response;
 import cn.fyypumpkin.service.TransitoryService;
+import com.alibaba.fastjson.JSONObject;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,8 +42,11 @@ public class TransitoryController {
      */
     @RequestMapping("/pumpkin/register")
     @ResponseBody
+    @ControllerErrorHandler
     public Object register(@RequestBody String message) {
+        TransitoryRegisterDTO req = JSONObject.parseObject(message, TransitoryRegisterDTO.class);
+        TransitoryRegisterResult register = transitoryService.register(TransitoryAssember.toDO(req));
 
-        return Response.ok();
+        return Response.ok(TransitoryAssember.toDTO(register));
     }
 }

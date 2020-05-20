@@ -1,5 +1,6 @@
 package cn.fyypumpkin.domain;
 
+import cn.fyypumpkin.domain.result.TransitoryRegisterResult;
 import java.util.Date;
 import lombok.Data;
 

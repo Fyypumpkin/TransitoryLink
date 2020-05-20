@@ -9,7 +9,9 @@ import lombok.Getter;
  */
 @AllArgsConstructor
 public enum TransitoryErrorCode implements ErrorCode {
-    INVALID_REQ(101, "非法请求");
+    INVALID_REQ(101, "非法请求"),
+    INVALID_TYPE(102, "不存在的类型"),
+    UNKNOW_EX(103, "未知异常");
 
     @Getter
     private int code;

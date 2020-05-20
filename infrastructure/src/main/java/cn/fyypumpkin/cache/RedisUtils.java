@@ -1,5 +1,6 @@
 package cn.fyypumpkin.cache;
 
+import com.alibaba.fastjson.JSON;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -25,11 +26,19 @@ public class RedisUtils {
         redisTemplate.opsForValue().set(key, value, timeout, timeUnit);
     }
 
+    public static void set(String key, Object value, long timeout, TimeUnit timeUnit) {
+        redisTemplate.opsForValue().set(key, JSON.toJSONString(value), timeout, timeUnit);
+    }
+
     public static void setBit(String key, long offset, boolean value) {
         redisTemplate.opsForValue().setBit(key, offset, value);
     }
 
     public static boolean getBit(String key, long offset) {
         return Optional.ofNullable(redisTemplate.opsForValue().getBit(key, offset)).orElse(false);
+    }
+
+    public static Long incr(String key){
+        return redisTemplate.opsForValue().increment(key);
     }
 }
