@@ -1,6 +1,8 @@
 一个短连接服务
 web(DTO) -> service(DO) -> repository(Entity)
 
+支持布隆过滤器排查
+
 [x] 请求
 
 [x] 注册

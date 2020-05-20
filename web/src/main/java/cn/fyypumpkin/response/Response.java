@@ -22,6 +22,14 @@ public class Response {
         return Response.builder().status(Status.SUCCESS).data(data).build();
     }
 
+    public static String failed(){
+        return "404";
+    }
+
+    public static String index(){
+        return "index";
+    }
+
     public static Response failed(String msg) {
         return Response.builder().status(Status.FAILED).msg(msg).build();
     }
