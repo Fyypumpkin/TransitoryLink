@@ -7,7 +7,7 @@ web(DTO) -> service(DO) -> repository(Entity)
 
 [ ] log
 
-[ ] 跨域
+[x] 跨域（不受浏览器同源策略限制，同源策略只针对 Dom, Ajax, Cookie, LocalStorage, IndexDb）
 
 [ ] 接入登陆账号
 
