@@ -12,6 +12,7 @@ import cn.fyypumpkin.service.TransitoryService;
 import com.alibaba.fastjson.JSONObject;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author fyypumpkin on 3/25/20
  */
+@Slf4j
 @RestController
 public class TransitoryController {
     @Resource
@@ -46,7 +48,7 @@ public class TransitoryController {
     public Object register(@RequestBody String message) {
         TransitoryRegisterDTO req = JSONObject.parseObject(message, TransitoryRegisterDTO.class);
         TransitoryRegisterResult register = transitoryService.register(TransitoryAssember.toDO(req));
-
+        log.info("register: {}", register);
         return Response.ok(TransitoryAssember.toDTO(register));
     }
 }
