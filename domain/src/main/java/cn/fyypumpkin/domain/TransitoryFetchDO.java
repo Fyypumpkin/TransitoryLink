@@ -15,8 +15,6 @@ import lombok.Data;
 @Data
 @BloomFilterHashValue
 public class TransitoryFetchDO {
-    @Resource
-    private RedisUtils redisUtils;
 
     @BloomFilterHashValue
     private String shortUri;

@@ -13,12 +13,12 @@ public class ScaleUtils {
     public static String convert(long number, int length) {
         char[] charSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
 
-        long temp = number;
+        long temp = Math.abs(number);
         Stack<Character> stack = new Stack<>();
         StringBuilder result = new StringBuilder(0);
 
         while (temp != 0) {
-            stack.add(charSet[new Long((temp - (temp / 62) * 62)).intValue()]);
+            stack.add(charSet[new Long((temp % 63)).intValue()]);
             temp = temp / 62;
         }
 

@@ -25,8 +25,10 @@ public class ControllerErrorHandlerAspect {
         try {
             return joinPoint.proceed();
         } catch (TransitoryException e) {
+            e.printStackTrace();
             return Response.failed(e.getMessage());
         } catch (Exception e) {
+            e.printStackTrace();
             return Response.failed(TransitoryErrorCode.UNKNOW_EX.getDesc());
         }
     }

@@ -7,26 +7,38 @@ import cn.fyypumpkin.function.BloomFilter;
 import cn.fyypumpkin.function.BloomFilterAdapter;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Resource;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
  * @author fyypumpkin
  * @date 2020-05-20
  */
-@Data
 @Component
 public class TransitoryRegisterDO {
-    @Resource
-    private BloomFilter bloomFilter;
-    @Resource
-    private BloomFilterAdapter bloomFilterAdapter;
+    private static BloomFilter bloomFilter;
+    private static BloomFilterAdapter bloomFilterAdapter;
 
+    @Autowired
+    public TransitoryRegisterDO(BloomFilter bloomFilter, BloomFilterAdapter bloomFilterAdapter) {
+        TransitoryRegisterDO.bloomFilter = bloomFilter;
+        TransitoryRegisterDO.bloomFilterAdapter = bloomFilterAdapter;
+    }
+
+    public TransitoryRegisterDO(){}
+
+    @Getter
+    @Setter
     private String longUri;
 
+    @Getter
+    @Setter
     private Integer redirectType;
 
+    @Getter
+    @Setter
     private Date expireDate;
 
     public TransitoryDO register() {
