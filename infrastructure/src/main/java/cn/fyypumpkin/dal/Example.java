@@ -1,4 +1,4 @@
-package cn.fyypumpkin.repository;
+package cn.fyypumpkin.dal;
 
 /**
  * @author fyypumpkin

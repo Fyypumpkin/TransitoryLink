@@ -1,4 +1,4 @@
-package cn.fyypumpkin.domain.enums;
+package cn.fyypumpkin.service.enums;
 
 import cn.fyypumpkin.domain.exception.TransitoryErrorCode;
 import cn.fyypumpkin.domain.exception.TransitoryException;
@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.Optional;
 import java.util.stream.Stream;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import org.apache.commons.lang3.time.DateUtils;
 

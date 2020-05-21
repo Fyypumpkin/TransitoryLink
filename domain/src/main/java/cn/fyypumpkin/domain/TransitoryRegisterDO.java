@@ -5,7 +5,6 @@ import cn.fyypumpkin.common.ScaleUtils;
 import cn.fyypumpkin.domain.factory.TransitoryFactory;
 import cn.fyypumpkin.function.BloomAdapterSelector;
 import cn.fyypumpkin.function.BloomFilter;
-import cn.fyypumpkin.function.BloomFilterAdapter;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import lombok.Getter;

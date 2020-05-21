@@ -1,7 +1,6 @@
-package cn.fyypumpkin.domain.utils;
+package cn.fyypumpkin.utils;
 
 import cn.fyypumpkin.cache.RedisUtils;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * @author fyypumpkin

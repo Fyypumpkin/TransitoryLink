@@ -3,7 +3,7 @@ package cn.fyypumpkin.domain.factory;
 import cn.fyypumpkin.domain.TransitoryDO;
 import cn.fyypumpkin.domain.result.TransitoryFetchResult;
 import cn.fyypumpkin.domain.result.TransitoryRegisterResult;
-import cn.fyypumpkin.domain.utils.TransitoryIdUtils;
+import cn.fyypumpkin.utils.TransitoryIdUtils;
 import java.util.Date;
 
 /**

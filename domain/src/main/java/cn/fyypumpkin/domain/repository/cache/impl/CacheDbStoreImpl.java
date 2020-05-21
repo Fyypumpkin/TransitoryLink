@@ -1,4 +1,4 @@
-package cn.fyypumpkin.cache.impl;
+package cn.fyypumpkin.domain.repository.cache.impl;
 
 /**
  * @author fyypumpkin

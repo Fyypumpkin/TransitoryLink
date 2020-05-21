@@ -2,7 +2,7 @@ package cn.fyypumpkin.assember;
 
 import cn.fyypumpkin.domain.TransitoryFetchDO;
 import cn.fyypumpkin.domain.TransitoryRegisterDO;
-import cn.fyypumpkin.domain.enums.TransitoryType;
+import cn.fyypumpkin.service.enums.TransitoryType;
 import cn.fyypumpkin.domain.result.TransitoryFetchResult;
 import cn.fyypumpkin.domain.result.TransitoryRegisterResult;
 import cn.fyypumpkin.dto.TransitoryFetchDTO;

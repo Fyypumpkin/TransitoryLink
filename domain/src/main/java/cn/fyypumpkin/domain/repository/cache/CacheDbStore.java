@@ -1,4 +1,4 @@
-package cn.fyypumpkin.cache;
+package cn.fyypumpkin.domain.repository.cache;
 
 import java.util.List;
 
