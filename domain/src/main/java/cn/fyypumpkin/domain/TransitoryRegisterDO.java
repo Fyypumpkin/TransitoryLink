@@ -18,15 +18,6 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class TransitoryRegisterDO {
-    private static BloomFilter bloomFilter;
-    private static BloomAdapterSelector bloomAdapterSelector;
-
-    @Autowired
-    public TransitoryRegisterDO(BloomFilter bloomFilter, BloomAdapterSelector bloomAdapterSelector) {
-        TransitoryRegisterDO.bloomFilter = bloomFilter;
-        TransitoryRegisterDO.bloomAdapterSelector = bloomAdapterSelector;
-    }
-
     public TransitoryRegisterDO(){}
 
     @Getter
@@ -40,14 +31,4 @@ public class TransitoryRegisterDO {
     @Getter
     @Setter
     private Date expireDate;
-
-    public TransitoryDO register() {
-        String shortUri = ScaleUtils.convert(longUri.hashCode(), 8);
-        TransitoryDO transitoryDO = TransitoryFactory.createTransitoryDO(shortUri, longUri, redirectType, expireDate);
-        RedisUtils.set(shortUri, transitoryDO, 24, TimeUnit.HOURS);
-        bloomFilter.addToFilter(bloomAdapterSelector.select("redis"), shortUri);
-
-        // 数据库操作
-        return transitoryDO;
-    }
 }

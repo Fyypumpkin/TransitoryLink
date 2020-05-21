@@ -15,8 +15,4 @@ public class TransitoryFetchDO {
 
     @BloomFilterHashValue
     private String shortUri;
-
-    public TransitoryDO fetch() {
-        return JSONObject.parseObject(RedisUtils.get(shortUri), TransitoryDO.class);
-    }
 }
