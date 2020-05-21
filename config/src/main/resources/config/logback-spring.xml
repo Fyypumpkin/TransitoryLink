@@ -40,8 +40,4 @@
         <appender-ref ref="FILE"/>
     </root>
 
-    <logger name="com.example.logbackdemo.IndexAction" level="info" additivity="false">
-        <appender-ref ref="CONSOLE"/>
-    </logger>
-
 </configuration>

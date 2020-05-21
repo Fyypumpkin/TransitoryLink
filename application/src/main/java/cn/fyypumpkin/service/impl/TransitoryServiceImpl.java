@@ -1,5 +1,6 @@
 package cn.fyypumpkin.service.impl;
 
+import cn.fyypumpkin.aop.LazyLog;
 import cn.fyypumpkin.domain.TransitoryDO;
 import cn.fyypumpkin.domain.TransitoryFetchDO;
 import cn.fyypumpkin.domain.TransitoryRegisterDO;
@@ -19,12 +20,14 @@ public class TransitoryServiceImpl implements TransitoryService {
 
     @Override
     @EnableBloomFilter
+    @LazyLog
     public TransitoryFetchResult fetch(TransitoryFetchDO transitoryFetchDO) {
         TransitoryDO fetch = transitoryFetchDO.fetch();
         return TransitoryFactory.toFetchResult(fetch);
     }
 
     @Override
+    @LazyLog
     public TransitoryRegisterResult register(TransitoryRegisterDO registerDO) {
         TransitoryDO register = registerDO.register();
         return TransitoryFactory.toRegisterResult(register);
