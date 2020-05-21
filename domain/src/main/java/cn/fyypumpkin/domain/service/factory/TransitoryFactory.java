@@ -1,4 +1,4 @@
-package cn.fyypumpkin.domain.factory;
+package cn.fyypumpkin.domain.service.factory;
 
 import cn.fyypumpkin.domain.TransitoryDO;
 import cn.fyypumpkin.domain.result.TransitoryFetchResult;

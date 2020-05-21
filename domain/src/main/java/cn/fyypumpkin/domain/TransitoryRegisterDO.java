@@ -2,7 +2,7 @@ package cn.fyypumpkin.domain;
 
 import cn.fyypumpkin.cache.RedisUtils;
 import cn.fyypumpkin.common.ScaleUtils;
-import cn.fyypumpkin.domain.factory.TransitoryFactory;
+import cn.fyypumpkin.domain.service.factory.TransitoryFactory;
 import cn.fyypumpkin.function.BloomAdapterSelector;
 import cn.fyypumpkin.function.BloomFilter;
 import java.util.Date;

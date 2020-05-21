@@ -4,7 +4,7 @@ import cn.fyypumpkin.aop.LazyLog;
 import cn.fyypumpkin.domain.TransitoryDO;
 import cn.fyypumpkin.domain.TransitoryFetchDO;
 import cn.fyypumpkin.domain.TransitoryRegisterDO;
-import cn.fyypumpkin.domain.factory.TransitoryFactory;
+import cn.fyypumpkin.domain.service.factory.TransitoryFactory;
 import cn.fyypumpkin.domain.result.TransitoryFetchResult;
 import cn.fyypumpkin.domain.aop.EnableBloomFilter;
 import cn.fyypumpkin.domain.result.TransitoryRegisterResult;
